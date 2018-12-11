@@ -8,6 +8,6 @@ public class PedidoConsumer {
 
 	@RabbitListener(queues = "${jsa.rabbitmq.queue}")
 	public void recievedMessage(String cep) {
-		System.out.println("Recieved Message: " + cep);
+		System.out.println("Recieved Message: " + cep + "R$ 29,00");
 	}
 }

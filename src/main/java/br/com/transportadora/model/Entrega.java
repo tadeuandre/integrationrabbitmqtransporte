@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import br.com.transportadora.objectvalue.SituacaoEntrega;
 
@@ -17,9 +18,13 @@ public class Entrega {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@OneToOne
 	private Destinatario destinatario;
+	
 	@Enumerated(EnumType.STRING)
 	private SituacaoEntrega statusEntrega;
+	
 	private BigDecimal frete;
 
 	public Long getId() {
